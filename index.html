@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymbro | The Social Fitness App for Filipinos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonLime: '#ccff00',
+                        darkBg: '#0b0b0d',
+                        surfaceCard: '#16161a',
+                        surfaceCardHover: '#1f1f24',
+                    },
+                    fontFamily: {
+                        urbanist: ['Urbanist', 'sans-serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles that Tailwind doesn't easily cover */
+        .text-neon-glow {
+            text-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+        .btn-neon-glow:hover {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-white font-sans overflow-x-hidden">
+
+    <!-- Gradient Background Highlights -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-neonLime/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="absolute top-[1200px] left-[-100px] w-[600px] h-[600px] bg-neonLime/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-darkBg/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-urbanist font-black text-2xl tracking-wider text-white">
+                GYM<span class="text-neonLime">BRO</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+                <a href="#features" class="hover:text-neonLime transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-neonLime transition-colors">How It Works</a>
+                <a href="#creators" class="hover:text-neonLime transition-colors">For Creators</a>
+                <a href="#simulator" class="hover:text-neonLime transition-colors">Try Stream Sim</a>
+            </nav>
+
+            <div>
+                <a href="#join" class="bg-neonLime text-black font-urbanist font-black px-6 py-2.5 rounded-full text-sm uppercase tracking-wider hover:bg-white transition-all duration-300 btn-neon-glow">
+                    Join Waitlist
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 space-y-8">
+            <div class="inline-flex items-center gap-2 bg-neonLime/10 border border-neonLime/20 px-4 py-1.5 rounded-full text-neonLime text-xs font-bold uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-neonLime animate-ping"></span> Coming soon
+            </div>
+            
+            <h1 class="font-urbanist font-black text-5xl sm:text-6xl lg:text-7xl uppercase leading-none tracking-tight">
+                FIND YOUR SQUAD.<br>
+                STREAM YOUR <span class="text-neonLime text-neon-glow">SWEAT.</span>
+            </h1>
+            
+            <p class="text-gray-400 text-lg sm:text-xl max-w-xl">
+                The absolute first Pinoy-centric fitness app. Match with local workout buddies, track local macros (sinigang-ready!), and stream live workouts to earn GCash directly from your followers.
+            </p>
+
+            <!-- Inline Email Signup -->
+            <form onsubmit="handleWaitlistSubmit(event, 'hero')" class="flex flex-col sm:flex-row gap-3 max-w-md">
+                <input type="email" placeholder="Enter your email" required
+                    class="bg-surfaceCard border border-white/10 rounded-full px-6 py-4 flex-grow text-white placeholder-gray-500 focus:outline-none focus:border-neonLime focus:ring-1 focus:ring-neonLime transition-colors">
+                <button type="submit" 
+                    class="bg-neonLime text-black font-urbanist font-black px-8 py-4 rounded-full uppercase tracking-wider hover:bg-white transition-all duration-300 btn-neon-glow shrink-0">
+                    Get Early Access
+                </button>
+            </form>
+            
+            <div class="flex items-center gap-6 text-sm text-gray-400">
+                <div class="flex -space-x-3">
+                    <img class="w-8 h-8 rounded-full border-2 border-darkBg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="User avatar">
+                    <img class="w-8 h-8 rounded-full border-2 border-darkBg" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop" alt="User avatar">
+                    <img class="w-8 h-8 rounded-full border-2 border-darkBg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="User avatar">
+                </div>
+                <span>Join <strong class="text-white font-bold">1,240+ Pinoy lifters</strong> on the whitelist</span>
+            </div>
+        </div>
+
+        <!-- Phone Mockup Frame -->
+        <div class="md:col-span-5 flex justify-center">
+            <div class="relative w-[290px] h-[580px] bg-zinc-900 border-[8px] border-zinc-800 rounded-[40px] shadow-2xl overflow-hidden ring-1 ring-white/10">
+                <!-- Speaker Notch -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-zinc-800 rounded-b-2xl z-30"></div>
+                
+                <!-- Mockup Content -->
+                <div class="w-full h-full bg-cover bg-center flex flex-col justify-between p-4 pt-8" 
+                     style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop')">
+                    
+                    <div class="flex justify-between items-center z-10">
+                        <div class="flex items-center gap-1.5 bg-red-600 px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider animate-pulse">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white"></span> LIVE
+                        </div>
+                        <div class="bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] text-gray-300">
+                            <i class="fa-solid fa-eye mr-1"></i> 842 watching
+                        </div>
+                    </div>
+
+                    <!-- Heart/Gifting Overlay & Chat -->
+                    <div class="space-y-3 z-10">
+                        <!-- Pop-up gift simulation -->
+                        <div class="bg-gradient-to-r from-neonLime to-emerald-500 text-black px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg animate-bounce">
+                            <i class="fa-solid fa-wine-glass"></i>
+                            <span>Abby_Run sent a Protein Shake! (₱250)</span>
+                        </div>
+                        
+                        <div class="space-y-1.5 max-h-[160px] overflow-hidden">
+                            <div class="bg-black/50 backdrop-blur-sm p-2 rounded text-xs">
+                                <span class="text-neonLime font-bold">Jerome_C:</span> Form looks solid bro! Let's get it!
+                            </div>
+                            <div class="bg-black/50 backdrop-blur-sm p-2 rounded text-xs">
+                                <span class="text-neonLime font-bold">Kyla_Runs:</span> Where is this gym located?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core App Features -->
+    <section id="features" class="bg-surfaceCard py-24 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="font-urbanist font-black text-4xl sm:text-5xl uppercase">Built for the <span class="text-neonLime">Pinoy Gym Community</span></h2>
+                <p class="text-gray-400 text-lg">We took the best parts of fitness technology and rebuilt them to fit the actual workout habits and culture in the Philippines.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1: SpotMeBro -->
+                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-neonLime/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-neonLime/10 rounded-xl flex items-center justify-center text-neonLime text-2xl mb-6 group-hover:bg-neonLime group-hover:text-black transition-all duration-300">
+                        <i class="fa-solid fa-people-arrows"></i>
+                    </div>
+                    <h3 class="font-urbanist font-black text-2xl uppercase mb-3">SpotMeBro Matcher</h3>
+                    <p class="text-gray-400">Like Tinder, but for gains. Set your gym (commercial or bakal gym) or local run club, swipe to match with lifters of similar skills, and coordinate schedule.</p>
+                </div>
+
+                <!-- Feature 2: Gifting & Live Stream -->
+                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-neonLime/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-neonLime/10 rounded-xl flex items-center justify-center text-neonLime text-2xl mb-6 group-hover:bg-neonLime group-hover:text-black transition-all duration-300">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-urbanist font-black text-2xl uppercase mb-3">Twitch for Lifting</h3>
+                    <p class="text-gray-400">Go live while on the bench. Viewers can send audio motivational soundbits directly to your headphones, and support you via instant digital gifts linked to GCash/Maya.</p>
+                </div>
+
+                <!-- Feature 3: Pinoy Macro Database -->
+                <div class="bg-darkBg p-8 rounded-2xl border border-white/5 hover:border-neonLime/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-neonLime/10 rounded-xl flex items-center justify-center text-neonLime text-2xl mb-6 group-hover:bg-neonLime group-hover:text-black transition-all duration-300">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-urbanist font-black text-2xl uppercase mb-3">Sinigang-Ready Tracker</h3>
+                    <p class="text-gray-400">No more guessing the macros of Pinoy recipes. Accurate, curated calorie database for Adobo, Sinigang, Pinakbet, and local brand supplements like Wheyl and Prothin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try the Interactive Streaming Simulator -->
+    <section id="simulator" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-neonLime/10 border border-neonLime/20 text-neonLime inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Interactive Sandbox
+                </div>
+                <h2 class="font-urbanist font-black text-4xl sm:text-5xl uppercase">Test Drive the <br><span class="text-neonLime">Gymbro Streamer UI</span></h2>
+                <p class="text-gray-400">See how easy it is for creators to receive local gifts during a workout stream. Tap the reaction buttons below to experience the real-time ecosystem.</p>
+                
+                <div class="space-y-4 pt-4 border-t border-white/10">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-sm">Send a Virtual Gift:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="simulateGift('Tubig', 10, '🥤')" class="bg-surfaceCard border border-white/10 px-4 py-2.5 rounded-lg text-sm hover:border-neonLime hover:text-neonLime transition-all flex items-center gap-1.5">
+                            🥤 Tubig (₱10)
+                        </button>
+                        <button onclick="simulateGift('Saging', 50, '🍌')" class="bg-surfaceCard border border-white/10 px-4 py-2.5 rounded-lg text-sm hover:border-neonLime hover:text-neonLime transition-all flex items-center gap-1.5">
+                            🍌 Saging (₱50)
+                        </button>
+                        <button onclick="simulateGift('Protein Shake', 250, '⚡')" class="bg-surfaceCard border border-white/10 px-4 py-2.5 rounded-lg text-sm hover:border-neonLime hover:text-neonLime transition-all flex items-center gap-1.5">
+                            ⚡ Protein (₱250)
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500">Every donation fires a massive graphic stream pop-up and deposits real balance directly into your linked GCash wallet.</p>
+                </div>
+            </div>
+
+            <!-- Simulator Render Screen -->
+            <div class="lg:col-span-7 flex justify-center w-full">
+                <div class="bg-surfaceCard p-6 rounded-3xl border border-white/5 w-full max-w-md shadow-xl flex flex-col gap-4">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-red-600 animate-pulse"></span>
+                            <span class="font-urbanist font-black text-sm uppercase">Coach_Sandro is LIVE</span>
+                        </div>
+                        <span class="text-xs text-neonLime" id="sim-earnings">₱0.00 Earned Today</span>
+                    </div>
+
+                    <!-- Sandbox Stream Window -->
+                    <div class="relative aspect-video rounded-xl overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop')">
+                        <!-- Pop-up overlay target -->
+                        <div id="sim-gift-overlay" class="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-300 opacity-0 scale-90">
+                            <div class="bg-neonLime text-black px-6 py-4 rounded-xl font-urbanist font-black uppercase text-center shadow-2xl flex flex-col items-center">
+                                <span id="overlay-emoji" class="text-4xl mb-1">⚡</span>
+                                <span id="overlay-text" class="text-lg">Coach Sandro sent Saging!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sandbox Chat Window -->
+                    <div class="h-44 bg-darkBg rounded-xl p-3 flex flex-col justify-end overflow-hidden gap-1 text-xs border border-white/5" id="sim-chat-box">
+                        <div class="text-gray-500 italic text-center py-2 mb-auto">Interactive Chat Feed</div>
+                        <div class="chat-msg"><span class="text-neonLime font-bold">InasalKing:</span> Bench form looks perfect coach.</div>
+                        <div class="chat-msg"><span class="text-neonLime font-bold">FitSis_23:</span> How many reps total today?</div>
+                    </div>
+
+                    <!-- Interactive User Comment Box -->
+                    <form onsubmit="sendSimMessage(event)" class="flex gap-2">
+                        <input type="text" id="sim-msg-input" placeholder="Type a chat comment..." required
+                            class="bg-darkBg border border-white/10 rounded-lg px-4 py-2 flex-grow text-sm focus:outline-none focus:border-neonLime">
+                        <button type="submit" class="bg-neonLime text-black font-bold px-4 rounded-lg text-sm hover:bg-white transition-all">
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action & Sign up Area -->
+    <section id="join" class="bg-surfaceCard py-24 border-t border-white/5 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h2 class="font-urbanist font-black text-4xl sm:text-5xl lg:text-6xl uppercase">Secure Your <span class="text-neonLime">Beta Access</span></h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                We are building Gymbro right now. Enter your email below to receive invitation updates, exclusive discounts with local wellness partners, and access to launch-party group runs.
+            </p>
+
+            <form onsubmit="handleWaitlistSubmit(event, 'footer')" class="max-w-md mx-auto space-y-3">
+                <input type="email" placeholder="Enter your email address" required id="footer-email"
+                    class="w-full bg-darkBg border border-white/10 rounded-full px-6 py-4 text-white text-center placeholder-gray-500 focus:outline-none focus:border-neonLime focus:ring-1 focus:ring-neonLime transition-colors">
+                
+                <div class="flex justify-center gap-4 text-sm text-gray-400 pt-2">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="user-role" value="athlete" checked class="accent-neonLime"> I'm a Gym Goer
+                    </label>
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="user-role" value="creator" class="accent-neonLime"> I'm a Creator / Trainer
+                    </label>
+                </div>
+
+                <button type="submit" 
+                    class="w-full bg-neonLime text-black font-urbanist font-black py-4 rounded-full uppercase tracking-wider hover:bg-white transition-all duration-300 btn-neon-glow">
+                    Reserve My Spot (Free)
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkBg border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="font-urbanist font-black text-xl tracking-wider text-white">
+                GYM<span class="text-neonLime">BRO</span>
+            </div>
+            <p class="text-xs text-gray-500">© 2026 Gymbro Philippines. Built for the local fitness community.</p>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL (Custom modal instead of ugly native alert) -->
+    <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-6">
+        <div class="bg-surfaceCard border border-neonLime/20 p-8 rounded-3xl max-w-md w-full text-center space-y-6 shadow-2xl animate-bounce">
+            <div class="w-16 h-16 bg-neonLime/10 text-neonLime rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-urbanist font-black text-2xl uppercase">You're Whitelisted!</h3>
+            <p class="text-gray-400 text-sm">
+                Salamat! We've registered your interest. You are officially in line to receive early access keys to the Gymbro closed beta in Manila. Check your inbox soon!
+            </p>
+            <button onclick="closeModal()" class="w-full bg-neonLime text-black font-urbanist font-black py-3 rounded-full uppercase hover:bg-white transition-all">
+                Salamat, Bro!
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripting for Live Streaming Sandbox & Form submissions -->
+    <script>
+        let accumulatedEarnings = 0;
+
+        // Simulate receiving virtual gifts in our Sandbox screen
+        function simulateGift(giftName, price, emoji) {
+            accumulatedEarnings += price;
+            document.getElementById('sim-earnings').innerText = `₱${accumulatedEarnings.toLocaleString()}.00 Earned Today`;
+
+            // Display interactive alert popup in screen
+            const overlay = document.getElementById('sim-gift-overlay');
+            const overlayText = document.getElementById('overlay-text');
+            const overlayEmoji = document.getElementById('overlay-emoji');
+
+            overlayText.innerText = `Matched User sent a ${giftName}! (₱${price})`;
+            overlayEmoji.innerText = emoji;
+
+            // Trigger animation
+            overlay.classList.remove('opacity-0', 'scale-90');
+            overlay.classList.add('opacity-100', 'scale-100');
+
+            setTimeout(() => {
+                overlay.classList.remove('opacity-100', 'scale-100');
+                overlay.classList.add('opacity-0', 'scale-90');
+            }, 2500);
+
+            // Add notification inside simulation chat box
+            appendSimChat(`<span class="text-amber-400 font-bold"><i class="fa-solid fa-gift mr-1"></i> Anonymous sent a ${giftName}! (₱${price})</span>`);
+        }
+
+        // Send Custom Message in Live Sandbox
+        function sendSimMessage(event) {
+            event.preventDefault();
+            const input = document.getElementById('sim-msg-input');
+            const message = input.value.trim();
+            if(!message) return;
+
+            appendSimChat(`<span class="text-neonLime font-bold">You:</span> ${message}`);
+            input.value = '';
+        }
+
+        function appendSimChat(elementHtml) {
+            const chatBox = document.getElementById('sim-chat-box');
+            const div = document.createElement('div');
+            div.className = "chat-msg opacity-90 transition-all duration-300";
+            div.innerHTML = elementHtml;
+            chatBox.appendChild(div);
+
+            // Scroll chat to bottom
+            chatBox.scrollTop = chatBox.scrollHeight;
+            
+            // Limit to 5 visible comments in sandbox preview
+            while(chatBox.children.length > 6) {
+                chatBox.removeChild(chatBox.children[1]); // Keep title
+            }
+        }
+
+        // Waitlist submission handling
+        function handleWaitlistSubmit(event, source) {
+            event.preventDefault();
+            // Store email locally (or mock API call)
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('success-modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.getElementById('success-modal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
